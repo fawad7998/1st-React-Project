@@ -5,7 +5,6 @@ import 'react-toastify/dist/ReactToastify.css';
 
 function Home2() {
   const [text, setText] = useState('');
-  const [theme, setTheme] = useState('light');
 
   // ONCHANGE HANDLER
   const changetext = (a) => {
@@ -86,36 +85,27 @@ function Home2() {
   };
 
   // Theming section
-  const lighttheme = () => {
+
+  if ((lighttheme = true)) {
     document.getElementById('themes').style.backgroundColor = 'white';
     document.getElementById('themes').style.color = 'black';
+    if ((darktheme = true)) {
+      document.getElementById('themes').style.backgroundColor = 'black';
+      document.getElementById('themes').style.color = 'white';
+    } else {
+      toast('error');
+    }
+  }
 
-    // theme.backgroundColor = '#FF5733';
-    // theme.color = black;
-  };
-
-  const darktheme = () => {
-    document.getElementById('themes').style.backgroundColor = 'black';
-    document.getElementById('themes').style.color = 'white';
-
-    // theme.backgroundColor = black;
-    // theme.color = white;
-  };
-
-  // const themingSection = () => {
-  //   {
-  //     theme === 'light' ? setTheme(lighttheme) : '';
-  //   }
+  // const lighttheme = () => {
   // };
-  // const themingSection02 = () => {
-  //   {
-  //     theme === 'light' ? setTheme(darktheme) : '';
-  //   }
+
+  // const darktheme = () => {
   // };
 
   return (
     <>
-      <div className="container ">
+      <div id="theme" className="container " style={{paddingTop: '5rem'}}>
         <div className="mb-3">
           <label htmlFor="exampleFormControlTextarea1" className="form-label">
             Enter Your Text Here
@@ -173,29 +163,27 @@ function Home2() {
           >
             Copy Text
           </button>
-          {theme === 'light' ? (
-            <button
-              // id="firstid"
-              className="btn btn-primary"
-              onClick={darktheme}
-              style={{
-                marginLeft: '5px',
-              }}
-            >
-              Enable Dark Theme
-            </button>
-          ) : (
-            <button
-              // id="firstid"
-              className="btn btn-primary"
-              onClick={lighttheme}
-              style={{
-                marginLeft: '5px',
-              }}
-            >
-              Enable Light Theme
-            </button>
-          )}
+          {/* Theming Section */}
+          <button
+            // id="firstid"
+            className="btn btn-primary"
+            onClick={darktheme}
+            style={{
+              marginLeft: '5px',
+            }}
+          >
+            Enable Dark Theme
+          </button>
+          <button
+            // id="firstid"
+            className="btn btn-primary"
+            onClick={lighttheme}
+            style={{
+              marginLeft: '5px',
+            }}
+          >
+            Enable light Theme
+          </button>
         </div>
         <h1>Text Counter</h1>
         <p>
