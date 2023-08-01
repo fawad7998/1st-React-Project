@@ -5,6 +5,7 @@ import 'react-toastify/dist/ReactToastify.css';
 
 function Home2() {
   const [text, setText] = useState('');
+  const [theme, setTheme] = useState('light');
 
   // ONCHANGE HANDLER
   const changetext = (a) => {
@@ -13,38 +14,104 @@ function Home2() {
   // CLEAR TEXT
   const cleartext = () => {
     setText('');
-
-    toast('Text Cleared');
+    toast.success('Text Cleared', {
+      position: 'top-right',
+      autoClose: 700,
+      hideProgressBar: true,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+      theme: 'light',
+    });
   };
   // LOCASE
   const locase = () => {
     const newtxt = text.toLowerCase();
     setText(newtxt);
-    toast('Text Converted to Lower-Case');
+    toast.success('Converted to Lower-Case', {
+      position: 'top-right',
+      autoClose: 700,
+      hideProgressBar: true,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+      theme: 'light',
+    });
   };
   // UPCASE
   const upcase = () => {
     const newtxt2 = text.toUpperCase();
     setText(newtxt2);
-    toast('Text Converted to Upper-Case');
+    toast.success('Converted to Upper-Case', {
+      position: 'top-right',
+      autoClose: 700,
+      hideProgressBar: true,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+      theme: 'light',
+    });
   };
   // Remove Spaces
   const Rspace = () => {
     const newtext3 = text.split(/[ ]+/);
     setText(newtext3.join(' '));
-    toast('Extra Spaces Removed');
+    toast.success('Extra Spaces Removed', {
+      position: 'top-right',
+      autoClose: 700,
+      hideProgressBar: true,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+      theme: 'light',
+    });
   };
-  // COPY TEXT (ISsue)
+  // COPY TEXT (Issue)
   const copytext = () => {
     navigator.clipboard.writeText(text);
-    toast('Text Copied');
+    toast.success('Text Copied', {
+      position: 'top-right',
+      autoClose: 700,
+      hideProgressBar: true,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+      theme: 'light',
+    });
   };
 
-  //
-  // const date = Date();
-  // const mintes = date.getMinutes();
+  // Theming section
+  const lighttheme = () => {
+    document.getElementById('themes').style.backgroundColor = 'white';
+    document.getElementById('themes').style.color = 'black';
 
-  // console.log(mintes);
+    // theme.backgroundColor = '#FF5733';
+    // theme.color = black;
+  };
+
+  const darktheme = () => {
+    document.getElementById('themes').style.backgroundColor = 'black';
+    document.getElementById('themes').style.color = 'white';
+
+    // theme.backgroundColor = black;
+    // theme.color = white;
+  };
+
+  // const themingSection = () => {
+  //   {
+  //     theme === 'light' ? setTheme(lighttheme) : '';
+  //   }
+  // };
+  // const themingSection02 = () => {
+  //   {
+  //     theme === 'light' ? setTheme(darktheme) : '';
+  //   }
+  // };
 
   return (
     <>
@@ -106,6 +173,29 @@ function Home2() {
           >
             Copy Text
           </button>
+          {theme === 'light' ? (
+            <button
+              // id="firstid"
+              className="btn btn-primary"
+              onClick={darktheme}
+              style={{
+                marginLeft: '5px',
+              }}
+            >
+              Enable Dark Theme
+            </button>
+          ) : (
+            <button
+              // id="firstid"
+              className="btn btn-primary"
+              onClick={lighttheme}
+              style={{
+                marginLeft: '5px',
+              }}
+            >
+              Enable Light Theme
+            </button>
+          )}
         </div>
         <h1>Text Counter</h1>
         <p>
@@ -126,6 +216,7 @@ function Home2() {
         </p>
         <h1>Preview</h1>
         <p>{text.length > 0 ? text : 'Write Something'}</p>
+
         <ToastContainer />
       </div>
     </>
