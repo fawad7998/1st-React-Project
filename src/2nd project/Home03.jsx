@@ -21,6 +21,13 @@ function Home03() {
     setText(text03);
   };
 
+  // c;l
+  const cleartxt = () => {
+    // navigator.clipboard.writeText(text);
+    const newtext3 = text.split(/[ ]+/);
+    setText(newtext3.join(' '));
+  };
+
   return (
     <>
       <div className="container ">
@@ -46,6 +53,9 @@ function Home03() {
         </button>
         <button className="btn btn-primary" onClick={lowercase}>
           lower-Case
+        </button>
+        <button className="btn btn-primary" onClick={cleartxt}>
+          lower-zdcxvx
         </button>
       </div>
     </>

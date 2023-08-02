@@ -86,22 +86,22 @@ function Home2() {
 
   // Theming section
 
-  if ((lighttheme = true)) {
+  // if ((lighttheme = true)) {
+  //   if ((darktheme = true)) {
+  //   } else {
+  //     toast('error');
+  //   }
+  // }
+
+  const lighttheme = () => {
     document.getElementById('themes').style.backgroundColor = 'white';
     document.getElementById('themes').style.color = 'black';
-    if ((darktheme = true)) {
-      document.getElementById('themes').style.backgroundColor = 'black';
-      document.getElementById('themes').style.color = 'white';
-    } else {
-      toast('error');
-    }
-  }
+  };
 
-  // const lighttheme = () => {
-  // };
-
-  // const darktheme = () => {
-  // };
+  const darktheme = () => {
+    document.getElementById('themes').style.backgroundColor = 'black';
+    document.getElementById('themes').style.color = 'white';
+  };
 
   return (
     <>
@@ -188,9 +188,10 @@ function Home2() {
         <h1>Text Counter</h1>
         <p>
           {
-            text.split(' ').filter((f) => {
-              return f.length !== 0;
-            }).length
+            //   .filter((f) => {
+            //   return f.length !== 0;
+            // })
+            text.split('').length
           }{' '}
           Words {text.length} Characters
         </p>
@@ -203,7 +204,7 @@ function Home2() {
           Minutes
         </p>
         <h1>Preview</h1>
-        <p>{text.length > 0 ? text : 'Write Something'}</p>
+        <p>{text.length >= 0 ? text : 'Write Something'}</p>
 
         <ToastContainer />
       </div>
