@@ -188,12 +188,12 @@ function Home2() {
         <h1>Text Counter</h1>
         <p>
           {
-            //   .filter((f) => {
-            //   return f.length !== 0;
-            // })
-            text.split('').length
-          }{' '}
-          Words {text.length} Characters
+            text.split(' ').filter((f) => {
+              return f.length !== 0;
+            }).length
+          }
+          Words
+          {text.length} Characters
         </p>
         <h1>Read Time</h1>
         <p>
@@ -204,7 +204,7 @@ function Home2() {
           Minutes
         </p>
         <h1>Preview</h1>
-        <p>{text.length >= 0 ? text : 'Write Something'}</p>
+        <p>{text.length > 0 ? text : 'Write Something'}</p>
 
         <ToastContainer />
       </div>
