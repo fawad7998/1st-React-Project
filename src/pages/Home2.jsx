@@ -1,4 +1,4 @@
-import React, {useEffect, useState} from 'react';
+import React, {useState} from 'react';
 import {ToastContainer, toast} from 'react-toastify';
 
 import 'react-toastify/dist/ReactToastify.css';
@@ -105,7 +105,7 @@ function Home2() {
 
   return (
     <>
-      <div id="theme" className="container " style={{paddingTop: '5rem'}}>
+      <div className="container" style={{paddingTop: '5rem'}}>
         <div className="mb-3">
           <label htmlFor="exampleFormControlTextarea1" className="form-label">
             Enter Your Text Here

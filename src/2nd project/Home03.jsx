@@ -1,4 +1,5 @@
 import React, {useState} from 'react';
+import {ToastContainer, toast} from 'react-toastify';
 
 function Home03() {
   const [text, setText] = useState('');
@@ -15,7 +16,7 @@ function Home03() {
     const text02 = text.toUpperCase();
     setText(text02);
   };
-  //Uppercase
+  //Uppercase`
   const lowercase = () => {
     const text03 = text.toLowerCase();
     setText(text03);
@@ -57,6 +58,15 @@ function Home03() {
         <button className="btn btn-primary" onClick={cleartxt}>
           lower-zdcxvx
         </button>
+        <button
+          className="btn btn-primary"
+          onClick={() => {
+            toast('hedsfsfdfds');
+          }}
+        >
+          toast
+        </button>
+        <ToastContainer />
       </div>
     </>
   );
